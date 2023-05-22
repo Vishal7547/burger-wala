@@ -1,6 +1,6 @@
 import React from 'react'
 import {motion} from 'framer-motion';
-import me from '../../images/founder.jpeg'
+import me from '../../images/Screenshot_20230522_182949_Instagram.jpg'
 function Founder() {
     const options={
         initial:{

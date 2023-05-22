@@ -20,7 +20,7 @@ function Founder() {
         <p>Hey, Everyone I am , the founder of MBA Burger Wala.
 
             <br />
-            Our aim is to create the most tasty burger on planet
+            Our aim is to create the most tasty burger on planets
         </p>
       </motion.div>
     </section>

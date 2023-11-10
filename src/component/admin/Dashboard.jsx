@@ -54,7 +54,7 @@ const Dashboard = () => {
         <main>
           <article>
             <Box title="Users" value={usersCount} />
-            <Box title="Orders" value={ordersCount.total} />
+            <Box title="Orders" value={ordersCount?.total} />
             <Box title="Income" value={totalIncome} />
           </article>
 

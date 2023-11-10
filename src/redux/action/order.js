@@ -26,7 +26,11 @@ export const createOrder =
       dispatch({
         type: "createOrderRequest",
       });
-
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
       const { data } = await axios.post(
         `${server}/api/v2/createorder`,
         {
@@ -38,12 +42,7 @@ export const createOrder =
           shippingCharges,
           totalAmount,
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
+        config
       );
 
       dispatch({
@@ -65,7 +64,11 @@ export const paymentVerification =
       dispatch({
         type: "paymentVerificationRequest",
       });
-
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
       const { data } = await axios.post(
         `${server}/api/v2/paymentverification`,
         {
@@ -74,12 +77,7 @@ export const paymentVerification =
           razorpay_signature,
           orderOptions,
         },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true,
-        }
+        config
       );
 
       dispatch({
@@ -98,9 +96,7 @@ export const getMyOrders = () => async (dispatch) => {
   try {
     dispatch({ type: "getMyOrdersRequest" });
 
-    const { data } = await axios.get(`${server}/api/v2/myorders`, {
-      withCredentials: true,
-    });
+    const { data } = await axios.get(`${server}/api/v2/myorders`);
     console.log("dataCheck", data);
     dispatch({ type: "getMyOrdersSuccess", payload: data.orders });
   } catch (error) {
@@ -112,9 +108,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: "getOrderDetailsRequest" });
 
-    const { data } = await axios.get(`${server}/api/v2/order/${id}`, {
-      withCredentials: true,
-    });
+    const { data } = await axios.get(`${server}/api/v2/order/${id}`);
 
     dispatch({ type: "getOrderDetailsSuccess", payload: data.order });
   } catch (error) {

@@ -49,6 +49,7 @@ export const login = (email, password) => async (dispatch) => {
       config
     );
     console.log(data);
+
     dispatch({ type: "loginSuccess", payload: data.user });
   } catch (error) {
     dispatch({ type: "loginFail", payload: error.response.data.message });
@@ -62,7 +63,7 @@ export const register = (name, email, password) => async (dispatch) => {
     dispatch({ type: "registerRequest" });
 
     const config = { headers: { "Content-Type": "application/json" } };
-
+    console.log(name, email, password);
     const { data } = await axios.post(
       `${server}/register`,
       { name, email, password },

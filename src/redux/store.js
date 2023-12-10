@@ -15,4 +15,5 @@ const store = configureStore({
 });
 
 export default store;
-export const server = `https://babapanipuri.onrender.com`;
+// export const server = `https://babapanipuri.onrender.com`;
+export const server = `http://localhost:5000`;

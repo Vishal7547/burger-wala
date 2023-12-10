@@ -15,7 +15,14 @@ export const getAdminStats = () => async (dispatch) => {
     });
   }
 };
+
 export const getAdminUsers = () => async (dispatch) => {
+  // const axiosInstance = axios.create({
+  //   withCredentials: true,
+  // });
+  // const { data } = await axiosInstance.get(`${server}/api/v1/me`);
+  // console.log("adminDataNew", data);
+
   try {
     dispatch({ type: "getAdminUsersRequest" });
 
@@ -27,6 +34,7 @@ export const getAdminUsers = () => async (dispatch) => {
       type: "getAdminUsersFail",
       payload: error.response.data.message,
     });
+    console.log(error.message);
   }
 };
 
